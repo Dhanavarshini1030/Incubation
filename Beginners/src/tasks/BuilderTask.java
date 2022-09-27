@@ -1,13 +1,11 @@
 package tasks;
 
-import util.Custom;
-
-import util.VerifyNull;
+import util.CustomException;
+import util.Evaluate;
 
 public class BuilderTask
 { 
-	 VerifyNull check=new VerifyNull();
-
+	 
   public StringBuilder getAppend(String str)
   {
 	  StringBuilder build=getBuilder();
@@ -19,16 +17,16 @@ public class BuilderTask
 	  StringBuilder build=new StringBuilder();
 	  return build;
   }
-   public int getLen(StringBuilder sb)throws Custom
+   public int getLen(StringBuilder sb)throws CustomException
   {
-	  check.verify(sb);
+	  Evaluate.verify(sb);
 	  int len=sb.length();
 	  return len;
   }
- public StringBuilder getAppendArr(String[] words,StringBuilder sb,String toInsert)throws Custom
+ public StringBuilder getAppendArr(String[] words,StringBuilder sb,String toInsert)throws CustomException
  {
-	 check.verify(words);
-	 check.verify(sb);
+	 Evaluate.verify(words);
+	 Evaluate.verify(sb);
 	 for(String str:words)
 	 {
 		 sb=sb.append(toInsert);
@@ -37,10 +35,10 @@ public class BuilderTask
 	 return sb;
  }
   
-  public StringBuilder getDelete(StringBuilder term,String toDelete, int num)throws Custom
+  public StringBuilder getDelete(StringBuilder term,String toDelete, int num)throws CustomException
   {   
-	  check.verify(term);
-	  check.verify(toDelete);
+	  Evaluate.verify(term);
+	  Evaluate.verify(toDelete);
 	  int number=term.indexOf(toDelete);
 	  term=term.delete(0,number+1);
 	 /* int len2,len3=0;
@@ -54,20 +52,20 @@ public class BuilderTask
 	  term=term.delete(len2, len3);*/
 	  return term;
    }
-  public StringBuilder getInsert(StringBuilder term,String join,String search)throws Custom
+  public StringBuilder getInsert(StringBuilder term,String join,String search)throws CustomException
   {
-	  check.verify(term);
-	  check.verify(search);
+	  Evaluate.verify(term);
+	  Evaluate.verify(search);
 	  int num=term.indexOf(search);
 	  term=term.insert(num,search);
 	  term=term.insert(num+1, join);
 	  return term;
   }
- public StringBuilder getReplace(StringBuilder term, String separator, String replace)throws Custom
+ public StringBuilder getReplace(StringBuilder term, String separator, String replace)throws CustomException
   {   
-	  check.verify(term);
-	  check.verify(replace);
-	  check.verify(separator);
+	  Evaluate.verify(term);
+	  Evaluate.verify(replace);
+	  Evaluate.verify(separator);
 	  int len1,len3;
 	  len1=term.lastIndexOf(separator);
 	  for(int len2=0;len2<len1;len2++)
@@ -79,43 +77,43 @@ public class BuilderTask
 	  }
 	  return term;
   }
-  public StringBuilder getReverse(StringBuilder term)throws Custom
+  public StringBuilder getReverse(StringBuilder term)throws CustomException
   {
-	  check.verify(term);
+	  Evaluate.verify(term);
 	  term=term.reverse();
 	  return term;
   }
-  public StringBuilder getRemoved(StringBuilder term,int from,int to)throws Custom
+  public StringBuilder getRemoved(StringBuilder term,int from,int to)throws CustomException
   {
 	  int len=getLen(term);
 	  if((from>=len)||(to>=len))
 	  {
-	   throw new Custom("WARNING: Enter the Number within "+len);
+	   throw new CustomException("WARNING: Enter the Number within "+len);
 	  }
 	  term=term.delete(from, to);
 	  return term;
   }
-  public StringBuilder getReplaced(String str,StringBuilder term,int from,int to)throws Custom
+  public StringBuilder getReplaced(String str,StringBuilder term,int from,int to)throws CustomException
   {
 	  int len=getLen(term);
 	  if((from>=len)||(to>=len))
 	  {
-	   throw new Custom("WARNING: Enter the Number within "+len);
+	   throw new CustomException("WARNING: Enter the Number within "+len);
 	  }
 	  term=term.replace(from, to, str);
 	  return term;
   }
-  public int getFirstIndex(StringBuilder term,String separator)throws Custom
+  public int getFirstIndex(StringBuilder term,String separator)throws CustomException
   {
-	  check.verify(term);
-	  check.verify(separator);
+	  Evaluate.verify(term);
+	  Evaluate.verify(separator);
 	  int len=term.indexOf(separator);
 	  return len;
   }
-  public int getLastIndex(StringBuilder term,String separator)throws Custom
+  public int getLastIndex(StringBuilder term,String separator)throws CustomException
   {
-	  check.verify(term);
-	  check.verify(separator);
+	  Evaluate.verify(term);
+	  Evaluate.verify(separator);
 	  int len=term.lastIndexOf(separator);
 	  return len;
   }

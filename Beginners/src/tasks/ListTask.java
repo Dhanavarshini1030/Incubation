@@ -1,40 +1,31 @@
 package tasks;
 
 import java.util.ArrayList;
-
 import java.util.Iterator;
-
 import java.util.List;
 
-import util.Custom;
-
-import util.VerifyNull;
+import util.CustomException;//Swami - solved
+import util.Evaluate;
 
 
 public class ListTask
 {
-	VerifyNull check=new VerifyNull();
 	public <T> List<T> getArrayList()
 	{
 		List<T> list=new ArrayList<>();
 		return list;
 	}
 	
-	public <T> int getLength(List<T> list)throws Custom
+	public <T> int getLength(List<T> list)throws CustomException
 	{
-		check.verify(list);
+		Evaluate.verify(list);
 		int len=list.size();
 		return len;
 	}
 	
-	public List<Object> getObject(Object obj,List<Object> list)
+	public  List<Object> getAll(List<Object> list,Object[] str,int num)throws CustomException
 	{
-		list.add(obj);
-		return list;
-	}
-	
-	public  List<Object> getAll(List<Object> list,Object[] str,int num)
-	{
+		Evaluate.verify(str);
 		for(int i=0;i<num;i++)
 		{
 			list.add(str[i]);
@@ -42,9 +33,9 @@ public class ListTask
 		return list;
 	}
 	
-	public List<String> getAdd(String[] str,int num,List<String> arr)throws Custom
+	public List<String> getAdd(String[] str,int num,List<String> arr)throws CustomException
 	{
-		check.verify(str);
+		Evaluate.verify(str);	//Swami solved
 		for(int i=0;i<num;i++)
 		{
 			arr.add(str[i]);
@@ -52,192 +43,164 @@ public class ListTask
 		return arr;
 	}
 	
-	public List<Integer> getAddNum(int[] str,int num,List<Integer> arr)throws Custom
+	public List<Integer> getAddNum(int[] numbers,int num,List<Integer> arr)throws CustomException
 	{
-		check.verify(str);
+		Evaluate.verify(numbers);
 		for(int i=0;i<num;i++)
 		{
-			arr.add(str[i]);
+			arr.add(numbers[i]);
 		}
 		return arr;
 	}
 	
-	public List<Float> getAddFloat(float[] str,int num,List<Float> arr)throws Custom
+	public List<Float> getAddFloat(float[] decimals,int num,List<Float> arr)throws CustomException
 	{
-		check.verify(str);
+		Evaluate.verify(decimals);
 		for(int i=0;i<num;i++)
 		{
-			arr.add(str[i]);
+			arr.add(decimals[i]);
 		}
 		return arr;
 	}
 	
 	
-	public List<Long> getAddLong(long[] str,int num,List<Long> arr)throws Custom
+	public List<Long> getAddLong(long[] longValues,int num,List<Long> arr)throws CustomException
 	{
-		check.verify(str);
+		Evaluate.verify(longValues);
 		for(int i=0;i<num;i++)
 		{
-			arr.add(str[i]);
+			arr.add(longValues[i]);
 		}
 		return arr;
 	}
 	
-	public int getStrIndex(String search, List<String> list)throws Custom
+	public int getStrIndex(String search, List<String> list)throws CustomException
 	{
-		check.verify(list);
-		if(!list.contains(search))
-		{
-			throw new Custom("This ArrayList didn't have this String");
-		}
-		return list.indexOf(search);
+		Evaluate.verify(list);
+		return list.indexOf(search);//Swami solved
 	}
 	
-	public Iterator<String> getIterator(List<String> list)throws Custom
+	public Iterator<String> getIterator(List<String> list)throws CustomException
 	{	
-		check.verify(list);
+		Evaluate.verify(list);
 		return list.iterator();
 	}
 	
-	public String getIndexStr(List<String> list, int index)throws Custom
+	public String getIndexStr(List<String> list, int index)throws CustomException
 	{
 		int len=getLength(list);
 		if(index>=len)
 		{
-			throw new Custom("Enter the Number within "+len);
+			throw new CustomException("Enter the Number within "+len);
 		}
 		return list.get(index);
 	}
 	
-	public int getFirstIndex(List<String> list,String search)throws Custom
-	{ 
-		//check.verify(search);
-		check.verify(list);
-		if(!list.contains(search))
-		{
-			throw new Custom("This ArrayList didn't have this String");
-		}
-		return list.indexOf(search);
-	}
-	
-	public int getLastIndex(List<String> list,String search)throws Custom
+	public int getLastIndex(List<String> list,String search)throws CustomException
 	{
-		//check.verify(search);
-		check.verify(list);
-		if(!list.contains(search))
-		{
-			throw new Custom("This ArrayList didn't have this String");
-		}
-		return list.lastIndexOf(search);
+		Evaluate.verify(list);
+		return list.lastIndexOf(search);//Swami solved
 	}
 	
-	public List<String> getAddStr(String str,int index,List<String> list)throws Custom
+	public List<String> getAddStr(String str,int index,List<String> list)throws CustomException
 	{
 		int len=getLength(list);
 		if(index>=len)
 		{
-			throw new Custom("Enter the Number within "+len);
+			throw new CustomException("Enter the Number within "+len);
 		}
 		list.add(index, str);
 		return list;
 	}
 	
-	public List<String> getSubList(List<String> list,List<String> newList,int from,int to)throws Custom
+	public List<String> getSubList(List<String> list,List<String> newList,int from,int to)throws CustomException
 	{
 		  int len=getLength(list);
 		  if((len<=from)||(len<=to))
 		  {
-		   throw new Custom("WARNING: Enter the Number within "+len);
+		   throw new CustomException("WARNING: Enter the Number within "+len);
 		  }
 		  newList=list.subList(from, to);
 		  return newList;
 	}
 	
-	public List<String> getCombinedList(List<String> list1,List<String> list2,List<String> newList)throws Custom
+	public List<String> getCombinedList(List<String> list1,List<String> list2,List<String> newList)throws CustomException
 	{
-		check.verify(list2);
-		check.verify(list1);
+		Evaluate.verify(list2);
+		Evaluate.verify(list1);
 		newList.addAll(list1);
 		newList.addAll(list2);
 		return newList;
 	}
 	
-	public List<String> getCombinedList2(List<String> list1,List<String> list2,List<String> newList)throws Custom
+	public List<String> getCombinedList2(List<String> list1,List<String> list2,List<String> newList)throws CustomException
 	{
-		check.verify(list2);
-		check.verify(list1);
+		Evaluate.verify(list2);
+		Evaluate.verify(list1);
 		newList.addAll(list2);
 		newList.addAll(list1);
 		return newList;
 	}
 	
-	public List<Float> getRemoved(List<Float> list, float value)throws Custom
+	public List<Float> getRemove(List<Float> list, float value)throws CustomException
 	{
-		check.verify(list);
-		if(!list.contains(value))
-		{
-			throw new Custom("This ArrayList didn't have this Value");
-		}
-		list.remove(value);
+		Evaluate.verify(list);
+		list.remove(value);//Swami   solved
 		return list;
 	}
 	
-	public List<Float> getRemoveIndex(List<Float> list,int index)throws Custom
+	public List<Float> getRemoveIndex(List<Float> list,int index)throws CustomException
 	{
 		int len=getLength(list);
 		if(index>=len)
 		{
-			throw new Custom("Enter the Number within "+len);
+			throw new CustomException("Enter the Number within "+len);
 		}
 		
 		list.remove(index);
 		return list;
 	}
 	
-	public List<Long> getRemoveList(List<Long> list,int from,int to)throws Custom
+	public List<Long> getRemoveList(List<Long> list,int from,int to)throws CustomException
 	{
 		int len=getLength(list);
 		if((len<=from)||(len<=to))
 		{
-		   throw new Custom("WARNING: Enter the Number within "+len);
+		   throw new CustomException("WARNING: Enter the Number within "+len);
 		}
-		List<Long> subList=getArrayList();
-		subList=list.subList(from, to);
+		List<Long> subList=list.subList(from, to);//Swami solved
 		list.removeAll(subList);
 		return list;
 		
 	}
 	
-	public List<String> getIntersect(List<String> list1, List<String> list2)throws Custom
+	public List<String> getIntersect(List<String> list1, List<String> list2)throws CustomException
 	{
-		check.verify(list2);
-		check.verify(list1);
-		list1.retainAll(list2);
+		Evaluate.verify(list2);
+		Evaluate.verify(list1);
+		list1.retainAll(list2);//18
 		return list1;
 	}
 	
-	public List<String> getDifferent(List<String> list1, List<String> list2)throws Custom
+	public List<String> getDifferent(List<String> list1, List<String> list2)throws CustomException
 	{
-		 check.verify(list2);
-		 check.verify(list1);
-		 list2.retainAll(list1);							//A-(A INTERSECT B)
-	  	 list1.removeAll(list2);
+		 Evaluate.verify(list2);
+		 Evaluate.verify(list1);
+		 list1.removeAll(list2);//Swami			solved				
 	  	 return list1;	
 	}
 	
 	
-	public List<Long> getRemoveAll(List<Long> list)throws Custom
+	public List<Long> getRemoveAll(List<Long> list)throws CustomException
 	{
-		check.verify(list);
-		//list.removeAll(list);
+		Evaluate.verify(list);
 		list.clear();
 		return list;
 	}
 	
-	public boolean getChecked(List<String> list,String verify)throws Custom
+	public boolean getChecked(List<String> list,String verify)throws CustomException
 	{
-		//check.verify(verify);
-		check.verify(list);
+		Evaluate.verify(list);
 		return list.contains(verify);
 		
 	}

@@ -1,12 +1,10 @@
 package runner;
 
 import java.util.InputMismatchException;
-
-import tasks.BuilderTask;
-
 import java.util.Scanner;
 
-import util.Custom;
+import tasks.BuilderTask;
+import util.CustomException;
 
 public class BuilderRunner 
 {
@@ -200,7 +198,7 @@ public class BuilderRunner
 			     answer=scan.nextInt();
 			   }while(answer==1);
 	}
-    catch(Custom te)
+    catch(CustomException te)
     {
      System.out.println(te.getMessage());     
     }

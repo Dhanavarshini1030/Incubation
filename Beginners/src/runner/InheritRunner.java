@@ -1,19 +1,13 @@
 package runner;
 
 import java.util.InputMismatchException;
-
 import java.util.Scanner;
 
 import tasks.inherit.Car;
-
 import tasks.inherit.Duck;
-
 import tasks.inherit.ParrotMod;
-
 import tasks.inherit.SCross;
-
 import tasks.inherit.Swift;
-
 import tasks.inherit.XUV;
 
 public class InheritRunner 

@@ -1,11 +1,9 @@
 package runner;
 
 import java.util.Scanner;
-
 import java.util.InputMismatchException;
 
-import util.Custom;
-
+import util.CustomException;
 import tasks.StringTask;
 
 public class TestRunner
@@ -242,7 +240,7 @@ public class TestRunner
       answer=scan.nextInt();
      }while(answer==1);
     }
-    catch(Custom ex)
+    catch(CustomException ex)
     {
      System.out.println(ex.getMessage());     
     }

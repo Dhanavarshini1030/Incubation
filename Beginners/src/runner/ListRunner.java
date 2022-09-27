@@ -3,14 +3,15 @@ package runner;
 import java.util.InputMismatchException;
 
 import java.util.Iterator;
-
 import java.util.List;
-
 import java.util.Scanner;
 
+
+import util.CustomException;
+import tasks.BuilderTask;
+import tasks.StringTask;
 import tasks.ListTask;
 
-import util.Custom;
 
 public class ListRunner
 {
@@ -48,11 +49,13 @@ public class ListRunner
 	return str;
 	}
 	
-	public Object[] getObjArr(Object obj, Object obj2) 
+	public Object[] getObjArr(Object obj, Object obj2,Object obj3,Object obj4) 
 	{
-	Object[] str=new Object[2];
+	Object[] str=new Object[4];
 	str[0]=obj;
 	str[1]=obj2;
+	str[2]=obj3;
+	str[3]=obj4;
 	return str;
 	}
 	
@@ -126,8 +129,9 @@ public class ListRunner
 			    	  break;	
 			      case 4:
 			    	  List<Object> list4=task.getArrayList();
-			    	  ListTask task1=new ListTask();
-			    	  list4=task.getObject(task1, list4);
+			    	  //list4=task.getObject(task1, list4);
+			    	  Object[] obj=linkArr.getObjArr(task, linkArr,new BuilderTask(),new StringTask());
+			    	  list4=task.getAll(list4, obj, 4);
 			    	  System.out.println("The Custom Object is "+list4);
 			    	  break;
 			    	  
@@ -141,7 +145,7 @@ public class ListRunner
 			    	  num=linkArr.scan.nextInt();
 			    	  Object[] num5=linkArr.getObject(num);
 			    	  list5= task.getAll(list5, num5, num);
-			    	  Object[] obj=linkArr.getObjArr(task, linkArr);
+			    	  obj=linkArr.getObjArr(task, linkArr,new BuilderTask(),new StringTask());
 			    	  list5=task.getAll(list5, obj,2);
 			    	  len=task.getLength(list5);
 			    	  linkArr.getArrLen(list5, len);
@@ -205,7 +209,7 @@ public class ListRunner
 			    	  list9=task.getAdd(str, num, list9);
 			    	  System.out.println("Enter the String to find First and Last Index:");
 			    	  search=linkArr.scan.next();
-			    	  int firstIndex=task.getFirstIndex(list9, search);
+			    	  int firstIndex=task.getStrIndex(search, list9);
 			    	  int lastIndex=task.getLastIndex(list9, search);
 			    	  System.out.println("The First Index of "+search+" is "+firstIndex);
 			    	  System.out.println("The Last Index of "+search+" is "+lastIndex);
@@ -306,7 +310,7 @@ public class ListRunner
 			    	  text4=task.getAddFloat(array, num, text4);
 			    	  System.out.println("Enter The Value to be Removed: ");
 			    	  float value=linkArr.scan.nextFloat();
-			    	  text4=task.getRemoved(text4, value);
+			    	  text4=task.getRemove(text4, value);
 			    	  len=task.getLength(text4);
 			    	  linkArr.getArrLen(text4, len);
 			    	  break;
@@ -431,7 +435,7 @@ public class ListRunner
 			     answer=linkArr.scan.nextInt();
 			   }while(answer==1);
 	}
-    catch(Custom te)
+    catch(CustomException te)
     {
      System.out.println(te.getMessage());     
     }
