@@ -6,7 +6,7 @@ import java.util.InputMismatchException;
 import util.CustomException;
 import tasks.StringTask;
 
-public class TestRunner
+public class StringRunner
 { 
   static Scanner scan= new Scanner(System.in);
   public String getString()
@@ -34,7 +34,7 @@ public class TestRunner
     System.out.println("Provide any String to Process the Program");
    }
    StringTask task= new StringTask();
-   TestRunner linkStr= new TestRunner();
+   StringRunner linkStr= new StringRunner();
    int answer;
    try
    {
