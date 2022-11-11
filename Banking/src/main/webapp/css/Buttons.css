@@ -1,0 +1,61 @@
+.buttonStyle
+{
+	text-align:center;
+	padding:9px 7px;
+	border:none;
+	width:15%;
+	display:block;
+	left:5%;
+	cursor:pointer;
+	color:DarkBlue;
+	background-color:transparent;
+	border-radius:5px;
+	font-size:15px;
+	font-family: "Times New Roman", Times, serif;
+}
+.buttonStyle:hover
+{
+	background-color:Gainsboro;
+	color:black;
+}
+.buttonStyle:focus
+{
+	background-color:MistyRose;
+}
+.buttonStyle:active
+{
+	background-color:LightBlue;
+	transform:translateX(10px);
+}
+
+.buttonClick
+{
+	width:20%;
+	text-align:center;
+	padding:9px 7px;
+	border:none;
+	cursor:pointer;
+	color:DarkBlue;
+	background-color:#aad2d5;
+	font-size:15px;
+	font-family: "Times New Roman", Times, serif;
+	
+}
+.buttonClick:hover
+{
+	background-color:MistyRose;
+	color:black;
+}
+.buttonClick:focus
+{
+	background-color:Gainsboro;
+}
+.buttonClick:active
+{
+	background-color:LightBlue;
+	transform:translateX(5px);
+}
+.disabled
+{
+	cursor:not-allowed;
+}

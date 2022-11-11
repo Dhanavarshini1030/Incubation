@@ -1,0 +1,52 @@
+body 
+{
+	background-color:#98c9cd;
+	height:700px;
+	color:black;
+}
+.right
+{
+	position:absolute;
+	right:4%;
+	top:20px;
+}
+.dropdown
+{
+	display:inline-block;
+	position:absolute;
+	top:20px;
+	width:20%;
+	cursor:pointer;
+}
+.menu
+{
+	color:blue;
+	border:none;
+	padding:10px;
+	cursor:pointer;
+}
+.content
+{
+	text-align:center;
+	border:none;
+	cursor:pointer;
+	color:DarkBlue;
+	background-color:black;
+	border-radius:5px;
+	font-size:15px;
+	font-family: "Times New Roman", Times, serif;
+	display:none;
+	position:absolute;
+	right:75%;
+}
+.dropdown:hover .content 
+{
+  display: block;
+  background-color:LightSlateGrey;
+}
+.dropdown:hover.menu
+{
+	background-color:pink;
+}
+
+

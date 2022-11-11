@@ -1,0 +1,65 @@
+.header/*frame*/
+{
+	padding:30px;
+	background-color:white;
+	border:2px dotted black;
+}
+body
+{
+ 	 background-color:#F6F6F2;
+ 	 height:700px;
+}
+td,tr
+{
+	text-align:center;
+	border:none;
+	padding:10px;
+}
+input[type=text],[type=password],[type=email],select,option,[type=date]
+{
+	width:65%;
+	padding:6px;
+	border:hidden;
+	background-color:#e6eeeb;
+	color:black;
+	border-bottom:1px solid grey;
+	border-radius:4px;
+}
+
+table
+{
+	margin-left:10%;
+	margin-right:auto;
+	border:none;
+	border-collapse:collapse;
+	width:60%;
+	background-color: #eef6f6;
+	border-bottom:4px solid #98c9cd;
+}
+table tr:nth-child(odd)
+{
+	background-color:#cce4e5;
+}
+td:nth-child(odd)
+{
+	width:30%;
+}
+h2
+{
+	color:Brown;
+}
+h1
+{
+	color:MidNightBlue;
+}
+.container
+{
+	border-radius:10px;
+	margin-top:45px;
+	margin-left:15%;
+}	
+	
+	
+	
+	
+	

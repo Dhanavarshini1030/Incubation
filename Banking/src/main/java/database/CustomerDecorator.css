@@ -1,0 +1,43 @@
+/*body
+{
+	background-color:LavenderBlush;
+}
+td,tr
+{
+	border:2px double Black;
+	text-align:left;
+	padding:6px;
+}
+th
+{
+	border:2px double Black;
+	text-align:center;
+	padding:10px;
+	color:Maroon;
+	background-color:#ffc2c2;
+}
+table
+{
+	border:2px solid Silver;
+	border-collapse:separate;
+	width:50%;
+	background-color:white;
+}
+table tr:nth-child(odd)
+{
+	background-color:#ffdcdc;
+}
+h2
+{
+	color:Brown;
+}
+h1
+{
+	color:MidNightBlue;
+}*/
+	
+	
+	
+	
+	
+	

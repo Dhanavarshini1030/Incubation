@@ -1,0 +1,51 @@
+body
+{
+	background-color:SeaShell;
+}
+td,tr
+{
+	border:2px double Black;
+	text-align:left;
+	padding:10px;
+}
+th
+{
+	border:2px double Black;
+	text-align:center;
+	padding:10px;
+	color:Maroon;
+	background-color:#ffc2c2;
+	
+}
+table
+{
+	border:2px solid Silver;
+	border-collapse:collapse;
+	width:50%;
+	background-color:white;
+}
+table tr:nth-child(odd)
+{
+	background-color:#ffdcdc;
+}
+h2
+{
+	color:Salmon;
+}
+h1
+{
+	color:MidNightBlue;
+}
+.header
+{
+	display:block;
+	background-color:EDD0F9;
+	top:10px;
+}
+	
+	
+	
+	
+	
+	
+

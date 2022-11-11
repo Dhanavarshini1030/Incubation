@@ -1,0 +1,27 @@
+body {
+	background-color:Azure;
+}
+
+table {
+	border:none;
+	padding: 5px;
+}
+
+td {
+	border:none;
+	border-spacing: 15px;
+}
+.footer
+{
+	background-color:aqua;
+	color:black;
+	text-align:center;
+	
+	right:0%;
+	left:0%;
+	bottom:0%;
+	position:absolute;
+	height:25px;
+}
+
+

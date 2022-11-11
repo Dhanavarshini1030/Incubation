@@ -1,0 +1,122 @@
+/*.buttonStyle
+{
+	text-align:center;
+	padding:9px 7px;
+	
+	border:none;
+	width:18%;
+	display:block;
+	cursor:pointer;
+	color:DarkBlue;
+	background-color:OldLace;
+	border-radius:5px;
+	font-size:15px;
+	font-family: "Times New Roman", Times, serif;
+}
+.buttonStyle:hover
+{
+	background-color:Gainsboro;
+	color:black;
+}
+
+.buttonStyle:focus
+{
+	background-color:MistyRose;
+}
+.buttonStyle:active
+{
+	background-color:LightBlue;
+	transform:translateX(21px);
+}
+
+.buttonClick
+{
+	text-align:center;
+	padding:9px 7px;
+	border:none;
+	width:100px;
+	display:inline-block;
+	cursor:pointer;
+	color:DarkBlue;
+	background-color:HoneyDew;
+	font-size:15px;
+	font-family: "Times New Roman", Times, serif;
+	
+}
+.buttonClick:hover
+{
+	background-color:MistyRose;
+	color:black;
+}
+.buttonClick:focus
+{
+	background-color:Gainsboro;
+}
+.buttonClick:active
+{
+	background-color:LightBlue;
+	transform:translateX(15px);
+}
+.logoutButton
+{
+	text-align:center;
+	padding:9px 7px;
+	border:none;
+	width:70px;
+	cursor:pointer;
+	color:DarkBlue;
+	background-color:HoneyDew;
+	font-size:5px;
+	font-family: "Times New Roman", Times, serif;
+	border-radius:20px;
+}
+.logoutButton:hover
+{
+	background-color:MistyRose;
+	color:black;
+}
+.logoutButton:focus
+{
+	background-color:Gainsboro;
+}
+.logoutButton:active
+{
+	background-color:LightBlue;
+	transform:translateX(15px);
+}
+.disabled
+{
+	cursor:not-allowed;
+}*/
+
+/*<style >
+body
+{
+	background-color:LavenderBlush;
+}
+td,tr
+{
+	border:2px double Black;
+	text-align:left;
+	padding:6px;
+}
+th
+{
+	border:2px double Black;
+	text-align:center;
+	padding:10px;
+}
+table
+{
+	border:2px double Black;
+	border-collapse:collapse;
+	width:50%;
+}
+h2
+{
+	color:Brown;
+}
+h1
+{
+	color:MidNightBlue;
+}*/
